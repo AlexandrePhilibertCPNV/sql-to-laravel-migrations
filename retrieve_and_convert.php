@@ -144,7 +144,7 @@ foreach ($table_names as $table_name){
     $table_schema_code = '    $table->timestamps();';
     $table_schema_codes []= ($table_schema_code);
 
-    $query = "SHOW INDEX FROM {$table_name};";
+    $query = "SHOW INDEX FROM `{$table_name}`;";
 
     $indexes = [];
     $results = $mysqli->query($query);
@@ -161,7 +161,7 @@ foreach ($table_names as $table_name){
         }
     }
 
-    $query = ("SHOW CREATE TABLE {$table_name};");
+    $query = ("SHOW CREATE TABLE `{$table_name}`;");
 
     $sql = [];
     $results = $mysqli->query($query);
